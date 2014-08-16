@@ -1,7 +1,7 @@
 Summary:	Universally Unique Identifier library
 Name:		ossp-uuid
 Version:	1.6.2
-Release:	5
+Release:	6
 License:	MIT
 Group:		Libraries
 URL:		http://www.ossp.org/pkg/lib/uuid/
