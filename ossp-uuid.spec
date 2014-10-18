@@ -1,7 +1,8 @@
+# based on PLD Linux spec git://git.pld-linux.org/packages/.git
 Summary:	Universally Unique Identifier library
 Name:		ossp-uuid
 Version:	1.6.2
-Release:	6
+Release:	7
 License:	MIT
 Group:		Libraries
 URL:		http://www.ossp.org/pkg/lib/uuid/
@@ -85,6 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -114,7 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/ossp-uuid.pc
 %{_mandir}/man3/ossp-uuid.3*
 %{_mandir}/man1/uuid-config.1*
-%{_libdir}/libossp-uuid.la
 
 %files c++
 %defattr(644,root,root,755)
@@ -125,7 +127,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/oosp-uuid/uuid++.hh
 %{_libdir}/libossp-uuid++.so
-%{_libdir}/libossp-uuid++.la
 %{_mandir}/man3/uuid++.3*
 
 %files dce
@@ -137,5 +138,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/oosp-uuid/uuid_dce.h
 %{_libdir}/libossp-uuid_dce.so
-%{_libdir}/libossp-uuid_dce.la
 
